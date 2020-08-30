@@ -15,7 +15,6 @@
 
 """Wrapper for creating the ant environment in gym_mujoco."""
 
-import math
 import numpy as np
 from gym import utils
 from gym.envs.mujoco import mujoco_env
