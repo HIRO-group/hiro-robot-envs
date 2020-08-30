@@ -13,7 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 
-from .ant_maze_env import AntMazeEnv
+from hiro_robot_envs.envs.ant_envs.ant_maze_env import AntMazeEnv
 
 
 def create_maze_env(env_name=None):

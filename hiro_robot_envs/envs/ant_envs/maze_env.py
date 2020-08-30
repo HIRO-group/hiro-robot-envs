@@ -21,7 +21,7 @@ import xml.etree.ElementTree as ET
 import numpy as np
 import gym
 
-from . import maze_env_utils
+from hiro_robot_envs.envs.ant_envs import maze_env_utils
 
 # Directory that contains mujoco xml files.
 MODEL_DIR = 'assets'
