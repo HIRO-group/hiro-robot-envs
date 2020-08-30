@@ -1,2 +1,3 @@
 gym==0.12.5
 pybullet
+numpy

@@ -18,11 +18,10 @@
 import os
 import tempfile
 import xml.etree.ElementTree as ET
-import math
 import numpy as np
 import gym
 
-from envs import maze_env_utils
+from . import maze_env_utils
 
 # Directory that contains mujoco xml files.
 MODEL_DIR = 'assets'
