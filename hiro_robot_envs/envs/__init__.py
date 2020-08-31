@@ -1,1 +1,1 @@
-from hiro_robot_envs.envs.ant_envs import EnvWithGoal # NOQA
+from hiro_robot_envs.envs.ant_envs import AntEnvWithGoal # NOQA

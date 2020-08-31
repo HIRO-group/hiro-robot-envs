@@ -38,7 +38,7 @@ def success_fn(last_reward):
     return last_reward > -5.0
 
 
-class EnvWithGoal(object):
+class AntEnvWithGoal(object):
     def __init__(self, base_env, env_name):
         self.base_env = base_env
         self.env_name = env_name
