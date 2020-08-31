@@ -1,17 +1,14 @@
+from hiro_robot_envs.envs.ant_envs.create_maze_env import create_maze_env
 import gym
 from gym.envs.registration import register
 
-# register(
-#         id='iCubReach-v0',
-#         entry_point='pybullet_robot_envs.envs:iCubReachGymEnv',
-#         max_episode_steps=1000,
-#         kwargs={ 'use_IK':1,
-#                  'control_arm': 'l',
-#                  'control_orientation': 0,
-#                  'obj_pose_rnd_std': 0,
-#                  'max_steps': 1000,
-#                  'renders': True},
-# )
+register(
+        id='antEnv-v0',
+        entry_point='hiro_robot_envs.envs:EnvWithGoal',
+        max_episode_steps=1000,
+        kwargs={'base_env': create_maze_env('AntMaze'),
+                'env_name': 'AntMaze'},
+)
 
 
 # --------------------------- #
