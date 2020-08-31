@@ -3,7 +3,7 @@
 import numpy as np
 import argparse
 
-from hiro_robot_envs.envs.ant_envs import create_maze_env
+from hiro_robot_envs.envs.ant_envs.create_maze_env import create_maze_env
 
 
 def get_goal_sample_fn(env_name, evaluate):
@@ -105,7 +105,7 @@ class AntEnvWithGoal(object):
 
 
 def run_environment(env_name, episode_length, num_episodes):
-    env = EnvWithGoal(
+    env = AntEnvWithGoal(
             create_maze_env.create_maze_env(env_name),
             env_name)
 
