@@ -30,4 +30,7 @@ from hiro_robot_envs.envs import AntEnvWithGoal
 from hiro_robot_envs.envs import create_maze_env
 
 env = AntEnvWithGoal(create_maze_env('AntMaze'), 'AntMaze')
+
+# do things you would normally do with an env below:
+
 ```
