@@ -1,6 +1,7 @@
 """Random policy on an environment."""
 
 import numpy as np
+import gym
 import argparse
 
 from hiro_robot_envs.envs.ant_envs.create_maze_env import create_maze_env
@@ -39,7 +40,7 @@ def success_fn(last_reward):
 
 
 class AntEnvWithGoal(object):
-    def __init__(self, base_env, env_name):
+    def __init__(self, base_env, env_name, env_subgoal_dim=15):
         self.base_env = base_env
         self.env_name = env_name
         self.evaluate = False
@@ -47,6 +48,10 @@ class AntEnvWithGoal(object):
         self.goal = None
         self.distance_threshold = 5
         self.count = 0
+        # create general subgoal space
+        limits = np.array([10, 10, 0.5, 1, 1, 1, 1,
+                           0.5, 0.3, 0.5, 0.3, 0.5, 0.3, 0.5, 0.3])[:env_subgoal_dim]
+        self.subgoal_space = gym.spaces.Box(low=limits*-1, high=limits)
         self.state_dim = self.base_env.observation_space.shape[0] + 1
         self.action_dim = self.base_env.action_space.shape[0]
 
