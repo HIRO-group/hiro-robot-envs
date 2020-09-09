@@ -4,8 +4,6 @@ A collection of robotic environments (which inherit from gym.Env) for reinforcem
 
 This repository is a Python package that allows you to use the environments within this repo.
 
-Examples are coming soon!
-
 
 ## Quick Start
 
@@ -29,7 +27,7 @@ pip3 install .
 After installing the package, here's an example of using the
 ant environment.
 
-```python
+```python3
 from hiro_robot_envs.envs import AntEnvWithGoal
 from hiro_robot_envs.envs import create_maze_env
 
