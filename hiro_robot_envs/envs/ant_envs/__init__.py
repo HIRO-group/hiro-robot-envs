@@ -25,6 +25,20 @@ def get_goal_sample_fn(env_name, evaluate):
 
 
 def get_reward_fn(env_name):
+    """
+    get the reward function.
+
+    Arguments
+    ---------
+    `env_name`: `str`: The possible environment names. Each reward function
+    is the negative distance to the goal.
+
+    Possible environment names:
+    - `'AntMaze'`
+    - `'AntPush'`
+    - `'AntFall'`
+
+    """
     if env_name == 'AntMaze':
         return lambda obs, goal: -np.sum(np.square(obs[:2] - goal)) ** 0.5
     elif env_name == 'AntPush':
@@ -48,10 +62,11 @@ class AntEnvWithGoal(object):
         self.goal = None
         self.distance_threshold = 5
         self.count = 0
-        # create general subgoal space
+        # create general subgoal space, independent of the env
         limits = np.array([10, 10, 0.5, 1, 1, 1, 1,
                            0.5, 0.3, 0.5, 0.3, 0.5, 0.3, 0.5, 0.3])[:env_subgoal_dim]
         self.subgoal_space = gym.spaces.Box(low=limits*-1, high=limits)
+
         self.state_dim = self.base_env.observation_space.shape[0] + 1
         self.action_dim = self.base_env.action_space.shape[0]
 
