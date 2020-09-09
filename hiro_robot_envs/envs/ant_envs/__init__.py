@@ -63,10 +63,10 @@ class AntEnvWithGoal(object):
         self.distance_threshold = 5
         self.count = 0
         # create general subgoal space, independent of the env
+        self.subgoal_dim = env_subgoal_dim
         limits = np.array([10, 10, 0.5, 1, 1, 1, 1,
-                           0.5, 0.3, 0.5, 0.3, 0.5, 0.3, 0.5, 0.3])[:env_subgoal_dim]
+                           0.5, 0.3, 0.5, 0.3, 0.5, 0.3, 0.5, 0.3])[:self.subgoal_dim]
         self.subgoal_space = gym.spaces.Box(low=limits*-1, high=limits)
-
         self.state_dim = self.base_env.observation_space.shape[0] + 1
         self.action_dim = self.base_env.action_space.shape[0]
 
