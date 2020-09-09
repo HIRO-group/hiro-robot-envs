@@ -20,6 +20,10 @@ cd hiro-robot-envs
 pip3 install .
 ```
 
+## Current Supported Environments
+
+- `AntEnvWithGoal` - creates the Mujoco ant environment, conditioned on a goal.
+
 ## Example
 
 After installing the package, here's an example of using the
