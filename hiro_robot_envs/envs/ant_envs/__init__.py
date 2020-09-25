@@ -99,8 +99,8 @@ class AntEnvWithGoal(object):
         }
         return next_obs, reward, done or self.count >= 500, info
 
-    def render(self):
-        self.base_env.render()
+    def render(self, mode='rgb_array'):
+        return self.base_env.render(mode=mode)
 
     def get_image(self):
         self.render()
