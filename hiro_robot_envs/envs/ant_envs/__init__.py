@@ -62,6 +62,7 @@ class AntEnvWithGoal(object):
         self.goal = None
         self.distance_threshold = 5
         self.count = 0
+        self.metadata = {'render.modes': ['human', 'rgb_array', 'depth_array'], 'video.frames_per_second': 125}
         # create general subgoal space, independent of the env
         self.subgoal_dim = env_subgoal_dim
         limits = np.array([10, 10, 0.5, 1, 1, 1, 1,
